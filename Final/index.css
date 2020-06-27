@@ -1,0 +1,251 @@
+* {
+    font-family: 'Noto Serif TC';
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    -ms-overflow-style: none;
+    overflow: -moz-scrollbars-none;
+    background-image: url("photo/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+big {
+    white-space: nowrap;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+iframe {
+    width: 800px;
+    height: 500px;
+    margin: auto;
+}
+
+.logo {
+    width: 180px;
+    margin: auto 10px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.pc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.option:any-link {
+    white-space: nowrap;
+    margin: auto 10px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.content-row {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.content-column {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.littleMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    text-align: left;
+    margin: 0 10px;
+    width: 200PX;
+}
+
+.littleMenu a:any-link {
+    margin: 0 0 10px 0;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.littleMenu a:focus {
+    color: black;
+    font-weight: bold;
+}
+
+.role {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+    width: 85%;
+    height: auto;
+    margin: 18px auto;
+}
+
+.role .content-column {
+    margin: auto;
+}
+
+.photo {
+    width: 120px;
+    height: 180px;
+    margin-right: 20px;
+}
+
+.product {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 5px auto 35px auto;
+}
+
+.product a {
+    margin: 10px 20px;
+}
+
+.video {
+    margin: auto;
+}
+
+.app {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 10px;
+}
+
+.app a {
+    margin: auto;
+}
+
+#rolecontent #roleimg {
+    margin: auto;
+}
+
+#zu,
+#chin,
+#zh,
+#sun,
+.phone,
+.menubutton {
+    display: none;
+}
+
+@keyframes hrDisplay {
+    from {
+        left: -8%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+@media(max-width: 1100px) {
+    iframe {
+        width: 600px;
+        height: 380px;
+    }
+}
+
+@media(max-width: 900px) {
+    iframe {
+        width: 450px;
+        height: 300px;
+    }
+}
+
+@media(max-width: 700px) {
+    iframe {
+        width: 300px;
+        height: 200px;
+    }
+}
+
+@media(max-width: 800px) {
+    .product {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 30px auto;
+    }
+    .role {
+        flex-direction: column;
+    }
+    .pc {
+        display: none;
+    }
+    .phone {
+        margin-bottom: 30px;
+    }
+    .phone .content-column {
+        align-items: center;
+        width: 100%;
+    }
+    .phone .option:any-link {
+        font-size: 20px;
+        margin: 20px 0 0 0;
+    }
+    .menubutton {
+        display: flex;
+        flex-direction: column;
+        width: 40px;
+        cursor: pointer;
+        margin: 10px;
+    }
+    .menubutton .line {
+        display: block;
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        background-color: #000000;
+        margin-bottom: 8px;
+        -webkit-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+    #menubutton.active .line:nth-child(1) {
+        transform: translateY(12px) rotate(45deg);
+    }
+    #menubutton.active .line:nth-child(2) {
+        opacity: 0;
+    }
+    #menubutton.active .line:nth-child(3) {
+        transform: translateY(-12px) rotate(-45deg);
+    }
+}
