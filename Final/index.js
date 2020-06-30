@@ -17,6 +17,9 @@ function mouseOut(n) {
 }
 
 $(document).ready(function() {
+    $("#start").toggle(200)
+    $("#start").delay(1500).toggle(300)
+    $("#home").delay(1500).toggle(500)
     $("#zua").click(function() {
         $("#rolecontent").load("role/zu.html")
     })
