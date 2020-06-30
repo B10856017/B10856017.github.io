@@ -18,7 +18,6 @@ function mouseOut(n) {
 
 $(document).ready(function() {
     $("#zua").click(function() {
-        $("#zu").toggle(500)
         $("#rolecontent").load("role/zu.html")
     })
     $("#china").click(function() {
@@ -30,7 +29,6 @@ $(document).ready(function() {
         $("#rolecontent").load("role/zh.html")
     })
     $("#suna").click(function() {
-        $("#sun").toggle(500)
         $("#rolecontent").load("role/sun.html")
     })
     $(".zu").click(function() {
