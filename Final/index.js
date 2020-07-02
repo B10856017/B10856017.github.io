@@ -44,31 +44,31 @@ $(document).ready(function() {
         $("#rolecontent").load("role/zh.html")
     })
     $("#s1").click(function() {
-        $("#video").attr("src", "https://www.youtube.com/embed/CILQoEXu3SQ")
+        $("#video").attr("src", "https://www.youtube.com/embed/CILQoEXu3SQ?autoplay=1&mute=1&playlist")
         $("#videotext").text("")
     })
     $("#s2").click(function() {
-        $("#video").attr("src", "https://www.youtube.com/embed/ioJ9vUZ5_C4")
+        $("#video").attr("src", "https://www.youtube.com/embed/ioJ9vUZ5_C4?autoplay=1&mute=1&playlist")
         $("#videotext").text("")
     })
     $("#s3").click(function() {
-        $("#video").attr("src", "https://www.youtube.com/embed/g7oocifsYL4")
+        $("#video").attr("src", "https://www.youtube.com/embed/g7oocifsYL4?autoplay=1&mute=1&playlist")
         $("#videotext").text("")
     })
     $("#s4").click(function() {
-        $("#video").attr("src", "https://www.youtube.com/embed/Bp8Pke73aCs")
+        $("#video").attr("src", "https://www.youtube.com/embed/Bp8Pke73aCs?autoplay=1&mute=1&playlist")
         $("#videotext").text("")
     })
     $("#s5").click(function() {
-        $("#video").attr("src", "https://www.youtube-nocookie.com/embed/pESmhJm67QI")
+        $("#video").attr("src", "https://www.youtube-nocookie.com/embed/pESmhJm67QI?autoplay=1&mute=1&playlist")
         $("#videotext").text("有版權問題，請直接至YouTube觀看。")
     })
     $("#s6").click(function() {
-        $("#video").attr("src", "https://www.youtube.com/embed/YCtGfefB1Hw")
+        $("#video").attr("src", "https://www.youtube.com/embed/YCtGfefB1Hw?autoplay=1&mute=1&playlist")
         $("#videotext").text("")
     })
     $("#s7").click(function() {
-        $("#video").attr("src", "https://www.youtube.com/embed/8TS47tvlwuo")
+        $("#video").attr("src", "https://www.youtube.com/embed/8TS47tvlwuo?autoplay=1&mute=1&playlist")
         $("#videotext").text("")
     })
     $(function() {

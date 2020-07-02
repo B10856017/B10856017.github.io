@@ -8,6 +8,7 @@
 html {
     width: 100%;
     height: 100%;
+    margin: 0;
 }
 
 body::-webkit-scrollbar {
@@ -17,6 +18,7 @@ body::-webkit-scrollbar {
 body {
     width: 100%;
     height: 100%;
+    margin: 0;
     -ms-overflow-style: none;
     overflow: -moz-scrollbars-none;
     background-image: url("photo/background.jpg");
@@ -37,11 +39,6 @@ header {
     margin-bottom: 10px;
 }
 
-footer {
-    width: 100%;
-    text-align: center;
-}
-
 big {
     white-space: nowrap;
     font-weight: bold;
@@ -56,7 +53,7 @@ iframe {
 
 .logo {
     width: 180px;
-    margin: auto 10px;
+    margin: 10px 8px auto 8px;
 }
 
 .menu {
@@ -182,7 +179,7 @@ iframe {
     align-self: center;
     height: 100%;
     width: 100%;
-    margin: -10px;
+    margin: 0px;
 }
 
 #rolecontent #roleimg {
@@ -216,26 +213,6 @@ iframe {
         justify-content: center;
         align-items: center;
         margin: 30px auto;
-    }
-}
-
-@media(max-width: 700px) {
-    iframe {
-        width: 300px;
-        height: 200px;
-    }
-    #rolediv {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .producta {
-        display: flex;
-        flex-direction: column;
-        margin: 10px;
-    }
-    .producta a {
-        margin: 10px;
     }
 }
 
@@ -285,5 +262,35 @@ iframe {
     }
     #menubutton.active .line:nth-child(3) {
         transform: translateY(-12px) rotate(-45deg);
+    }
+}
+
+@media(max-width: 700px) {
+    iframe {
+        width: 300px;
+        height: 200px;
+    }
+    #rolediv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #storydiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #storydiv .littleMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .producta {
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+    }
+    .producta a {
+        margin: 10px;
     }
 }
