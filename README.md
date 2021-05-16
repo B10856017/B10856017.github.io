@@ -1,62 +1,127 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="https://github.com/laravelio/art/blob/main/laravelio-logo-lg.svg" width="400" />
 </p>
 
-## About Laravel
+<p align="center">
+    <a href="https://github.com/laravelio/laravel.io/actions?query=workflow%3ATests">
+        <img src="https://github.com/laravelio/laravel.io/workflows/Tests/badge.svg" alt="Tests" />
+    </a>
+    <a href="https://github.styleci.io/repos/12895187">
+        <img src="https://github.styleci.io/repos/12895187/shield?style=flat" alt="Code Style">
+    </a>
+</p>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Laravel.io
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+This is the repository for the [Laravel.io](http://laravel.io) community portal. The code is entirely open source and licensed under [the MIT license](LICENSE.md). We welcome your contributions but we encourage you to read the [the contributing guide](CONTRIBUTING.md) before creating an issue or sending in a pull request. Read the installation guide below to get started with setting up the app on your machine.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Sponsors
 
-## Learning Laravel
+We'd like to thank these **amazing companies** for sponsoring us. If you are interested in becoming a sponsor, please visit <a href="https://github.com/sponsors/laravelio">the Laravel.io Github Sponsors page</a>.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **[Devsquad](https://devsquad.com)**
+- **[LaraJobs](https://larajobs.com)**
+- [Forge](https://forge.laravel.com)
+- [Envoyer](https://envoyer.io)
+- [Fathom](https://usefathom.com)
+- [Blackfire.io](https://blackfire.io)
+- [Tinkerwell](https://tinkerwell.app)
+- [Akaunting](https://akaunting.com/developers?utm_source=Laravelio&utm_medium=Banner&utm_campaign=Developers)
+- [Scout APM](https://ter.li/o1adaj)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Requirements
 
-## Laravel Sponsors
+The following tools are required in order to start the installation.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- PHP >=8.0
+- [Composer](https://getcomposer.org/download/)
+- [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [Valet](https://laravel.com/docs/valet#installation)
 
-### Premium Partners
+## Installation
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+> Note that you're free to adjust the `~/Sites/laravel.io` location to any directory you want on your machine. In doing so, be sure to run the `valet link` command inside the desired directory.
+
+1. Clone this repository with `git clone git@github.com:laravelio/laravel.io.git ~/Sites/laravel.io`
+2. Run `composer install` to install the PHP dependencies
+3. Set up a local database called `laravelio`
+4. Run `composer setup` to setup the application
+5. Set up a working e-mail driver like [Mailtrap](https://mailtrap.io/)
+6. Configure the (optional) features from below
+
+You can now visit the app in your browser by visiting [http://laravel.io.test](http://laravel.io.test). If you seeded the database you can login into a test account with **`johndoe`** & **`password`**.
+
+### Github Authentication (optional)
+
+To get Github authentication to work locally, you'll need to [register a new OAuth application on Github](https://github.com/settings/applications/new). Use `http://laravel.io.test` for the homepage url and `http://laravel.io.test/auth/github` for the callback url. When you've created the app, fill in the ID and secret in your `.env` file in the env variables below. You should now be able to authentication with Github.
+
+```
+GITHUB_ID=
+GITHUB_SECRET=
+GITHUB_URL=http://laravel.io.test/auth/github
+```
+
+### Algolia Search (optional)
+
+To get Algolia search running locally, you'll need to [register for a new account](https://www.algolia.com/users/sign_up) and create an index called `threads`. Algolia has a free tier which satisfies all of the requirements needed for a development environment. Now update the below variables in your `.env` file. The App ID and secret keys can be found in the `API Keys` section of the Algoila UI. 
+
+```
+SCOUT_DRIVER=algolia
+SCOUT_QUEUE=true
+
+ALGOLIA_APP_ID=
+ALGOLIA_SECRET="Use the Write API Key"
+
+MIX_ALGOLIA_APP_ID="${ALGOLIA_APP_ID}"
+MIX_ALGOLIA_SECRET="Use the Search API Key"
+MIX_ALGOLIA_INDEX=threads
+```
+
+In order to index your existing threads, run the following command:
+
+`php artisan scout:import App\\Models\\Thread`
+
+New threads will be automatically added to the index and threads which get edited will be automatically updated. If you need to flush your index and start again, you can run the following command:
+
+`php artisan scout:flush App\\Models\\Thread`
+
+### Twitter Sharing (optional)
+
+To enable published articles to be automatically shared to on Twitter, you'll need to [create a Twitter app](https://developer.twitter.com/apps/). Once the app has been created, update the below variables in your `.env` file. The consumer key and secret and access token and secret can be found in the `Keys and tokens` section of the Twitter developers UI. 
+
+```
+TWITTER_CONSUMER_KEY=
+TWITTER_CONSUMER_SECRET=
+TWITTER_ACCESS_TOKEN=
+TWITTER_ACCESS_SECRET=
+```
+
+Approved articles are shared in the order they were submitted for approval. Articles are shared twice per day at 14:00 and 18:00 UTC. Once an article has been shared, it will not be shared again.
+
+## Commands
+
+Command | Description
+--- | ---
+**`php artisan test --parallel`** | Run the tests
+`php artisan migrate:fresh --seed` | Reset the database
+`npm run watch` | Watch for changes in CSS and JS files
+
+## Maintainers
+
+The Laravel.io portal is currently maintained by [Dries Vints](https://github.com/driesvints) and [Joe Dixon](https://github.com/joedixon). If you have any questions please don't hesitate to create an issue on this repo.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Please read [the contributing guide](CONTRIBUTING.md) before creating an issue or sending in a pull request.
 
 ## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing or engaging in discussions.
 
 ## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Laravel.io, please send an email immediately to [security@laravel.io](mailto:security@laravel.io). **Do not create an issue for the vulnerability.**
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The MIT License. Please see [the license file](LICENSE.md) for more information.

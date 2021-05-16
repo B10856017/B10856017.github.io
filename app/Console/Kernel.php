@@ -13,24 +13,21 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        //
     ];
 
     /**
      * Define the application's command schedule.
-     *
-     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
-     * @return void
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('schedule-monitor:sync')->dailyAt('04:56');
+        $schedule->command('schedule-monitor:clean')->daily();
+        $schedule->command('horizon:snapshot')->everyFiveMinutes();
+        $schedule->command('post-article-to-twitter')->twiceDaily(14, 18);
     }
 
     /**
-     * Register the commands for the application.
-     *
-     * @return void
+     * Register the Closure based commands for the application.
      */
     protected function commands()
     {

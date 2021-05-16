@@ -17,4 +17,11 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
+    'verification' => [
+        'sent' => 'Email verification sent to :0. You can change your email address in your profile settings.',
+        'already_verified' => 'Your email address is already verified.',
+        'success' => 'Your email address was successfully verified.',
+        'no_match' => 'We could not verify your email address. The given email address and code did not match.',
+    ],
+
 ];

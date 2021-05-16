@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+use App\Events\ArticleWasApproved;
+use App\Events\ReplyWasCreated;
+use App\Listeners\SendArticleApprovedNotification;
+use App\Listeners\SendNewReplyNotification;
+use App\Listeners\StoreTweetIdentifier;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
+use Illuminate\Notifications\Events\NotificationSent;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -15,18 +18,14 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
+        ReplyWasCreated::class => [
+            SendNewReplyNotification::class,
+        ],
+        ArticleWasApproved::class => [
+            SendArticleApprovedNotification::class,
+        ],
+        NotificationSent::class => [
+            StoreTweetIdentifier::class,
         ],
     ];
-
-    /**
-     * Register any events for your application.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
 }
