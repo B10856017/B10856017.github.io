@@ -1,0 +1,12 @@
+@extends('page')
+@section('title','')
+@section('username',$username)
+@section('menu')
+    @parent
+@endsection
+@section('img')
+    <p></p>
+@endsection
+@section('content')
+    <p>123</p>
+@endsection

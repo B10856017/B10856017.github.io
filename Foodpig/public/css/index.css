@@ -1,0 +1,158 @@
+* {
+    font-size: 16px;
+    color: black;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Noto Serif TC';
+    color: black;
+}
+
+header {
+    height: 10%;
+    width: 100%;
+    background-color: #F19C99;
+    color: white;
+    font-size: 300%;
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form input {
+    border: none;
+    border-bottom: 2px solid;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button {
+    height: 30px;
+    width: 80px;
+    color: white;
+    background-color: #F19C99;
+    border: none;
+    border-radius: 30px;
+    margin-top: 30px;
+}
+
+#menuToggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#menu a {
+    color: #F19C99;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+#menu a:hover {
+    color: #F19C99;
+}
+
+#menuToggle input {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+    display: block;
+    width: 36px;
+    height: 4px;
+    margin: 5px 0 5px 20px;
+    position: relative;
+    background: white;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0), opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+    transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+    transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked~span {
+    opacity: 1;
+    transform: rotate(45deg) translate(6px, 2px);
+    background: #F19C99;
+}
+
+#menuToggle input:checked~span:nth-last-child(3) {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked~span:nth-last-child(2) {
+    transform: rotate(-45deg) translate(3px, 2px);
+}
+
+#menu {
+    position: absolute;
+    width: 30%;
+    max-width: 200px;
+    min-width: 160px;
+    margin: 300px 0 -50px;
+    padding-left: 20px;
+    padding-top: 200px;
+    background: white;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+    padding: 10px;
+    color: #F19C99;
+}
+
+#menuToggle input:checked~ul {
+    transform: none;
+}
+
+img {
+    width: auto;
+    height: 100%;
+}
+
+@media screen and (max-width:480px) {
+    #menu {
+        max-width: 550px;
+        min-width: 0;
+        width: 550px;
+    }
+    form p input {
+        width: 160px;
+    }
+}
